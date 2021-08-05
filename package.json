@@ -1,0 +1,22 @@
+{
+    "name": "challenge-aws-s3-service",
+    "version": "1.0.0",
+    "description": "A Nodejs Challange with AWS S3 Bucket",
+    "main": "handler.js",
+    "author": {
+        "name": "Valentina Vispo",
+        "email": "vsv.dev.soft@gmail.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shirosweets/challenge-JUL2021.git"
+    },
+    "devDependencies": {
+        "serverless-localstack": "^0.4.33"
+    },
+    "dependencies": {
+        "aws-sdk": "^2.957.0",
+        "dotenv": "^10.0.0"
+    }
+}

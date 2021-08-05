@@ -1,0 +1,64 @@
+service: challenge-aws-s3-service
+frameworkVersion: '>=2.52.1'
+
+configValidationMode: warm # error
+
+plugins:
+  - serverless-localstack
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-1  # north-virginia
+#   apiGateway:
+
+custom:
+  bucket: perfect-bucket
+  localstack:
+    debug: true
+    stages:
+      - localstack
+    endpointFile: local
+  host: http://localhost
+  autostart: true
+  # endpoints:
+  #   S3: http://localhost:4572
+  #   Lambda: http://localhost:4574
+  lambda:
+    mountCode: True
+  docker:
+    sudo: False
+  useDotenv: true
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+          cors: true
+  countFiles:
+    handler: handler.countFiles
+    events:
+      - http:
+          path: countFiles
+          method: get
+          cors: true
+  getFile:
+    handler: handler.getFile
+    events:
+      - http:
+          path: getFile
+          method: get
+          cors: true
+  addCsv:
+    handler: handler.addCsv
+    events:
+      - http:
+          path: addCsv
+          method: post
+          cors: true
+    # enviroment:
+    #   BUCKET_NAME: ${self:custom:.bucket}

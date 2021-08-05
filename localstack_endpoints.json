@@ -1,0 +1,7 @@
+{
+  "APIGateway": "http://localhost:4567",
+  "Lambda": "http://localhost:4574",
+  "S3": "http://localhost:4572",
+  "SES": "http://localhost:4579",
+  "SNS": "http://localhost:4575"
+}
