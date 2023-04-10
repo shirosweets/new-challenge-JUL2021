@@ -16,7 +16,7 @@
         "serverless-localstack": "^0.4.33"
     },
     "dependencies": {
-        "aws-sdk": "^2.957.0",
+        "aws-sdk": "^2.1354.0",
         "dotenv": "^10.0.0"
     }
 }
